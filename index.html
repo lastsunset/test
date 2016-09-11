@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app ="exampleApp">
+<head>
+<meta charset="utf-8">
+<script src="angular.min.js"></script>
+<script src="index.js"></script>
+<link rel="stylesheet" href="https://cdn.rawgit.com/esvit/ng-table/1.0.0/dist/ng-table.min.css">
+<script src="https://cdn.rawgit.com/esvit/ng-table/1.0.0/dist/ng-table.js"></script>
+
+
+<script>
+ 	angular.module("exampleApp", [])
+ 	.controller("defaultCtrl", function ($scope) {
+ 		$scope.items = [
+ 		{ name: "Item 1", price: 10.9, category: "Caategory 1", count: 10, tax: 1.12, expiration: 10 },
+ 		{ name: "Item 2", price: 10.9, category: "Caategory 1", count: 10, tax: 1.12, expiration: 10 }];
+ 		}); 		]
+ 		</script>
+</head>
+<body ng-controller="defaultCtrl">
+
+		<div class="panel panel-primary">
+		<div class="panel-heading">
+		<h3>
+		Items in cart
+		<span class="label label-info">{{items.length}}</span>
+		<table class="table">
+		<thead>
+		<tr>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Category</th>
+		<th>Count</th>
+		<th>Tax</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="item in items">
+			<td>{{item.name}}</td>
+			<td>{{item.price | currency}}</td>
+			<td>{{item.category}}</td>
+			<td>{{item.count}}</td>
+			<td>{{item.tax}}</td>
+			</tr>
+			</tbody>
+			</table>
+
+
+<!-- <table ng-table="vm.tableParams" class="table" show-filter="true">
+    <tr ng-repeat="user in $data">
+        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+            {{user.name}}</td>
+        <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
+            {{user.age}}</td>
+    </tr>
+</table> -->
+
+
+<!-- <label>Введите имя:</label>
+<input type="text" ng-model="name" placeholder="Введите имя">
+ 
+<h1>Добро пожаловать {{name}}!</h1> -->
+      
+
+</body>
+</html>
