@@ -1,0 +1,42 @@
+    <h3>Добавить продукт</h3>
+<form name="saveForm" class="form-horizontal">
+	<fieldset>
+            <div class="control-group" ng-class="{error: saveForm.product.$invalid}">
+			<label class="control-label" for="product">Продукт</label>
+			<div class="controls">
+				<input name="product" ng-model="item.product" required>
+			</div>
+		</div>
+		<div class="control-group" ng-class="{error: saveForm.cost.$invalid}">
+			<label class="control-label" for="cost">Цена</label>
+			<div class="controls">
+				<input name="cost" ng-model="item.cost" required>
+			</div>
+		</div>
+            <div class="form-actions">
+			<input type="button" ng-disabled="saveForm.$invalid||saveForm.$pristine" href="#/edit" ng-click="save()" class="btn btn-success" value="Добавить">
+			<a href="/" class="btn">Отмена</a>
+		</div>
+            
+            
+        </fieldset>
+</form>
+    <div id="table-wrapper">
+        <table class="table table-striped">
+<tbody>
+	<tr >
+
+		<td>22</td>
+		<td>22</td>
+<!--		<td>{{item.author}}</td>
+		<td>{{item.created}}</td>
+		<td>{{item.answered}}</td>-->
+	</tr>
+</tbody>
+</table>
+    </div>
+<div>
+<p>govno {{'yet' + '!'}}</p>
+<p> Hello Angular {{ 19 + 23 }}</p>
+
+</div>
