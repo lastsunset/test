@@ -1,5 +1,5 @@
 <?php
-include '../../sys/bdauth.php';
+include '../sys/bdauth.php';
 
 if (!setlocale(LC_CTYPE ,"ru_RU.UTF-8")) setlocale(LC_CTYPE,"ru_RU");
 register_shutdown_function('ajax_shutdown');
@@ -38,9 +38,5 @@ function ajax_shutdown() {
   }
 }
 ?>
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 

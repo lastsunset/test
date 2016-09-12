@@ -1,19 +1,26 @@
 <?php
-defined('DEVELOPMODE') &&
-define ('DEVELOPMODE', !strpos(HOST,'.')?1:0); // Develop-mode, extended error logging
 
-require_once "DbSimple/Connect.php";
-
-$dbcfg = array(
-	'type'=>'mysql',
-	'host'=>'localhost',
-	'port'=>'3306',
-	'database'=>'sunnyside',
-	'user'=>'root',
-	'password'=>'',
-	'prefix'=>'',
-	'logging'=>DEVELOPMODE,
-);
+try{
+$dbh = new PDO('mysql: host=localhost;dbname=sunnyside', 'root', '');
+sleep(5);
+}
+catch (PDOException $e) {
+echo $e->getMessage();
+//defined('DEVELOPMODE') &&
+//define ('DEVELOPMODE', !strpos(HOST,'.')?1:0); // Develop-mode, extended error logging
+//
+//require_once "DbSimple/Connect.php";
+//
+//$dbcfg = array(
+//	'type'=>'mysql',
+//	'host'=>'localhost',
+//	'port'=>'3306',
+//	'database'=>'sunnyside',
+//	'user'=>'root',
+//	'password'=>'',
+//	'prefix'=>'',
+//	'logging'=>DEVELOPMODE,
+//);
 //$db = new DbSimple_Connect("$dbcfg[type]://$dbcfg[user]:$dbcfg[password]@$dbcfg[host]:$dbcfg[port]/$dbcfg[database]");
 //if ($dbcfg['prefix']) $db->setIdentPrefix($dbcfg['prefix']);
 //$db->setErrorHandler('databaseErrorHandler');
@@ -53,6 +60,6 @@ $dbcfg = array(
 //    else $db_log_string = print_r($sql,1)."\n";
 //  file_put_contents(FILEROOT.'log/mysql-work.log', $db_log_string, FILE_APPEND);
 //}
-
+$dbh = null;
 ?>
 
